@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Alert, Modal, StyleSheet, Text, Pressable, View } from "react-native";
+import { Text, Pressable } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { ButtonAnimationView, fadeIn, fadeOut } from "./ButtonAnimation";
 import styles from "./styles";
 
 export default function AddVariableExpense() {
@@ -9,9 +10,13 @@ export default function AddVariableExpense() {
   return (
     <Pressable
       style={styles.button}
+      onPressIn={fadeIn}
+      onPressOut={fadeOut}
       onPress={() => navigation.navigate("AddVariableExpense" as never)}
     >
-      <Text style={styles.buttonText}>+ Tilføj variabel udgift</Text>
+      <ButtonAnimationView>
+        <Text style={styles.buttonText}>+ Tilføj variabel udgift</Text>
+      </ButtonAnimationView>
     </Pressable>
   );
 }
