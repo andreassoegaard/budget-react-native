@@ -4,6 +4,7 @@ import BudgetInnerScreen from "./Budget/BudgetInnerScreen";
 import AddIncomeScreen from "./Budget/AddIncomeScreen";
 import AddFixedExpenseScreen from "./Budget/AddFixedExpenseScreen";
 import AddVariableExpenseScreen from "./Budget/AddVariableExpenseScreen";
+import { Button } from "react-native";
 
 export default function HomeScreen() {
   const [loading, setLoading] = React.useState(false);
@@ -18,21 +19,27 @@ export default function HomeScreen() {
           headerLargeTitle: true,
         }}
       />
-      <HomeStack.Screen
-        name='AddIncome'
-        component={AddIncomeScreen}
-        options={{ title: "Tilføj indtægt" }}
-      />
-      <HomeStack.Screen
-        name='AddFixedExpense'
-        component={AddFixedExpenseScreen}
-        options={{ title: "Tilføj fast udgift" }}
-      />
-      <HomeStack.Screen
-        name='AddVariableExpense'
-        component={AddVariableExpenseScreen}
-        options={{ title: "Tilføj variabel udgift" }}
-      />
+      <HomeStack.Group
+        screenOptions={{
+          presentation: "modal",
+        }}
+      >
+        <HomeStack.Screen
+          name='AddIncome'
+          component={AddIncomeScreen}
+          options={{ title: "Tilføj indtægt" }}
+        />
+        <HomeStack.Screen
+          name='AddFixedExpense'
+          component={AddFixedExpenseScreen}
+          options={{ title: "Tilføj fast udgift" }}
+        />
+        <HomeStack.Screen
+          name='AddVariableExpense'
+          component={AddVariableExpenseScreen}
+          options={{ title: "Tilføj variabel udgift" }}
+        />
+      </HomeStack.Group>
     </HomeStack.Navigator>
   );
 }

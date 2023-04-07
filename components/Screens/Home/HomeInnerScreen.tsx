@@ -12,6 +12,8 @@ import {
 import SubTitle from "../../Ui/SubTitle";
 import InnerScreenContainer from "../../Ui/InnerScreenContainer";
 import ExpensesSlider from "./ExpensesSlider";
+import FutureExpenses from "./FutureExpenses";
+import SubSubTitle from "../../Ui/SubSubTitle";
 
 export default function HomeInnerScreen() {
   const [loading, setLoading] = useState(false);
@@ -40,7 +42,10 @@ export default function HomeInnerScreen() {
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }
       >
-        <SubTitle>Overblik</SubTitle>
+        <View style={{ marginTop: 20 }}>
+          <SubTitle>Overblik</SubTitle>
+        </View>
+
         <View style={{ marginBottom: 10 }}>
           <View
             style={{
@@ -118,6 +123,18 @@ export default function HomeInnerScreen() {
           <ExpensesSlider />
         </View>
         <SubTitle>Kommende udgifter</SubTitle>
+        <View style={{ marginBottom: 10 }}>
+          <SubSubTitle>Denne måned</SubSubTitle>
+          <FutureExpenses />
+        </View>
+        <View style={{ marginBottom: 10 }}>
+          <SubSubTitle>Maj 2023</SubSubTitle>
+          <FutureExpenses />
+        </View>
+        <View style={{ marginBottom: 10 }}>
+          <SubSubTitle>Juni 2023</SubSubTitle>
+          <FutureExpenses />
+        </View>
       </ScrollView>
     </InnerScreenContainer>
   );

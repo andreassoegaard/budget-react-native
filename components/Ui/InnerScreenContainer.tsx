@@ -9,7 +9,6 @@ export default function InnerScreenContainer(props: PropsWithChildren) {
         style={{
           height: "100%",
           paddingHorizontal: 18,
-          paddingVertical: 25,
         }}
       >
         {props.children}
