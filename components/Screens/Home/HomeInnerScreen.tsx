@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import SubTitle from "../../Ui/SubTitle";
 import InnerScreenContainer from "../../Ui/InnerScreenContainer";
+import ExpensesSlider from "./ExpensesSlider";
 
 export default function HomeInnerScreen() {
   const [loading, setLoading] = useState(false);
@@ -40,7 +41,7 @@ export default function HomeInnerScreen() {
         }
       >
         <SubTitle>Overblik</SubTitle>
-        <View style={{ marginBottom: 30 }}>
+        <View style={{ marginBottom: 10 }}>
           <View
             style={{
               flex: 1,
@@ -48,10 +49,10 @@ export default function HomeInnerScreen() {
               backgroundColor: "#1A7431",
               borderRadius: 15,
               padding: 22,
-              shadowColor: "#054a29",
-              shadowOffset: { width: 0, height: 10 },
-              shadowOpacity: 0.1,
-              shadowRadius: 5,
+              // shadowColor: "#054a29",
+              // shadowOffset: { width: 0, height: 10 },
+              // shadowOpacity: 0.1,
+              // shadowRadius: 5,
             }}
           >
             <Text
@@ -113,7 +114,9 @@ export default function HomeInnerScreen() {
             </View>
           </View>
         </View>
-        <SubTitle>Seneste udgifter</SubTitle>
+        <View style={{ marginBottom: 20 }}>
+          <ExpensesSlider />
+        </View>
         <SubTitle>Kommende udgifter</SubTitle>
       </ScrollView>
     </InnerScreenContainer>

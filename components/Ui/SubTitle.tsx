@@ -10,7 +10,9 @@ export default function SubTitle(props: PropsWithChildren<Props>) {
   return (
     <View style={styles.subTitleContainer}>
       <Text style={styles.subTitle}>{props.children}</Text>
-      {props.titleRight && <View>{props.titleRight()}</View>}
+      {props.titleRight && (
+        <View style={{ marginLeft: 10 }}>{props.titleRight()}</View>
+      )}
     </View>
   );
 }
@@ -20,11 +22,10 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
+    marginBottom: 10,
   },
   subTitle: {
     fontSize: 20,
     fontWeight: "bold",
-    marginBottom: 10,
   },
 });

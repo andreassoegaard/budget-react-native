@@ -1,7 +1,7 @@
 import { Text, Pressable } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { ButtonAnimationView, fadeIn, fadeOut } from "./ButtonAnimation";
-import styles from "./styles";
+import styles from "./Styles";
 
 export default function AddFixedExpense() {
   const navigation = useNavigation();
@@ -13,7 +13,7 @@ export default function AddFixedExpense() {
       onPress={() => navigation.navigate("AddFixedExpense" as never)}
     >
       <ButtonAnimationView>
-        <Text style={styles.buttonText}>+ Tilføj fast udgift</Text>
+        <Text style={styles.buttonText}>+</Text>
       </ButtonAnimationView>
     </Pressable>
   );
