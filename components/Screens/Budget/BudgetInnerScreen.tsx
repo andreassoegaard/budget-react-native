@@ -14,7 +14,7 @@ export default function HomeInnerScreen() {
 
   return (
     <InnerScreenContainer>
-      <View style={{ marginBottom: 20 }}>
+      <View style={{ marginBottom: 20, marginTop: 20 }}>
         <SubTitle titleRight={() => <AddIncome />}>Indtægter</SubTitle>
       </View>
       <View style={{ marginBottom: 20 }}>

@@ -9,13 +9,18 @@ export default function SettingsScreen() {
 
   return (
     <InnerScreenContainer>
-      <Pressable style={styles.button} onPress={() => supabase.auth.signOut()}>
-        {loading ? (
-          <ActivityIndicator />
-        ) : (
-          <Text style={styles.buttonText}>Log ud</Text>
-        )}
-      </Pressable>
+      <View style={{ marginTop: 20 }}>
+        <Pressable
+          style={styles.button}
+          onPress={() => supabase.auth.signOut()}
+        >
+          {loading ? (
+            <ActivityIndicator />
+          ) : (
+            <Text style={styles.buttonText}>Log ud</Text>
+          )}
+        </Pressable>
+      </View>
     </InnerScreenContainer>
   );
 }
