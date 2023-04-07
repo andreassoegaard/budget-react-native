@@ -8,8 +8,8 @@ export default function InnerScreenContainer(props: PropsWithChildren) {
         contentInsetAdjustmentBehavior='automatic'
         style={{
           height: "100%",
-          marginHorizontal: 18,
-          marginVertical: 25,
+          paddingHorizontal: 18,
+          paddingVertical: 25,
         }}
       >
         {props.children}
